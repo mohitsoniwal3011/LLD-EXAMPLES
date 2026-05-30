@@ -1,4 +1,4 @@
-package proxy;
+package prototype;
 
 /**
  * Prototype Design Pattern

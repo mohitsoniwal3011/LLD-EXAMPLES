@@ -1,3 +1,5 @@
+package composite;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +26,9 @@ import java.util.List;
  * REAL WORLD EXAMPLES
  * =========================================================================
  *
- * 1. File System
- *    - File
- *    - Folder (contains files/folders)
+ * 1. composite.File System
+ *    - composite.File
+ *    - composite.Folder (contains files/folders)
  *
  * 2. Restaurant Menu
  *    - Menu Item
@@ -101,14 +103,14 @@ import java.util.List;
  * HOW THIS IMPLEMENTATION WORKS
  * =========================================================================
  *
- * MenuItem (Component)
+ * composite.MenuItem (Component)
  * -------------------------------------------------------------------------
  * Common interface implemented by:
- *    - MenuItemImpl (Leaf)
- *    - MenuItemContainer (Composite)
+ *    - composite.MenuItemImpl (Leaf)
+ *    - composite.MenuItemContainer (Composite)
  *
  *
- * MenuItemImpl (Leaf)
+ * composite.MenuItemImpl (Leaf)
  * -------------------------------------------------------------------------
  * Represents actual menu items like:
  *    - Paneer
@@ -119,7 +121,7 @@ import java.util.List;
  * These are terminal/end objects.
  *
  *
- * MenuItemContainer (Composite)
+ * composite.MenuItemContainer (Composite)
  * -------------------------------------------------------------------------
  * Represents menus/submenus.
  *
@@ -138,12 +140,12 @@ import java.util.List;
  *
  *      item.display();
  *
- * Since every object implements MenuItem:
+ * Since every object implements composite.MenuItem:
  *
- * 1. If object is MenuItemImpl:
+ * 1. If object is composite.MenuItemImpl:
  *      -> Displays actual menu item.
  *
- * 2. If object is MenuItemContainer:
+ * 2. If object is composite.MenuItemContainer:
  *      -> Recursively displays all child items/submenus.
  *
  *
@@ -214,7 +216,7 @@ interface MenuItem {
  * COMPOSITE CLASS
  * =========================================================================
  *
- * MenuItemContainer represents menus/submenus.
+ * composite.MenuItemContainer represents menus/submenus.
  *
  * This class can contain:
  * 1. Menu items
@@ -274,7 +276,7 @@ class MenuItemContainer implements MenuItem {
  * LEAF CLASS
  * =========================================================================
  *
- * MenuItemImpl represents actual menu items.
+ * composite.MenuItemImpl represents actual menu items.
  *
  * Examples:
  * - Paneer

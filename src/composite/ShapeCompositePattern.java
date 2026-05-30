@@ -1,3 +1,5 @@
+package composite;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +19,9 @@ import java.util.List;
  *
  * Real World Examples:
  * -------------------------------------------------------------------------
- * 1. File System
- *    - File
- *    - Folder (contains files/folders)
+ * 1. composite.File System
+ *    - composite.File
+ *    - composite.Folder (contains files/folders)
  *
  * 2. Restaurant Menu
  *    - Menu Item
@@ -83,14 +85,14 @@ import java.util.List;
  * HOW THIS IMPLEMENTATION WORKS
  * =========================================================================
  *
- * Shape (Component)
+ * composite.Shape (Component)
  * -------------------------------------------------------------------------
  * Common interface for:
- *    - ShapeItem (Leaf)
- *    - ShapeContainer (Composite)
+ *    - composite.ShapeItem (Leaf)
+ *    - composite.ShapeContainer (Composite)
  *
  *
- * ShapeItem (Leaf)
+ * composite.ShapeItem (Leaf)
  * -------------------------------------------------------------------------
  * Represents actual individual shapes like:
  *    - Circle
@@ -100,13 +102,13 @@ import java.util.List;
  * These are the end objects of the tree.
  *
  *
- * ShapeContainer (Composite)
+ * composite.ShapeContainer (Composite)
  * -------------------------------------------------------------------------
  * Represents a group/container of shapes.
  *
  * This can contain:
- *    - ShapeItem objects
- *    - Other ShapeContainer objects
+ *    - composite.ShapeItem objects
+ *    - Other composite.ShapeContainer objects
  *
  * This creates a recursive tree structure.
  *
@@ -123,12 +125,12 @@ import java.util.List;
  *
  *      item.displayShapeName();
  *
- * Since every object implements Shape:
+ * Since every object implements composite.Shape:
  * -------------------------------------------------------------------------
- * 1. If object is ShapeItem:
+ * 1. If object is composite.ShapeItem:
  *      -> Directly performs operation.
  *
- * 2. If object is ShapeContainer:
+ * 2. If object is composite.ShapeContainer:
  *      -> Recursively performs operation on all children.
  *
  *
@@ -209,7 +211,7 @@ interface Shape {
  * COMPOSITE CLASS
  * =========================================================================
  *
- * ShapeContainer acts as a group/container of shapes.
+ * composite.ShapeContainer acts as a group/container of shapes.
  *
  * This class can contain:
  * 1. Individual shapes
@@ -285,7 +287,7 @@ class ShapeContainer implements Shape {
  * LEAF CLASS
  * =========================================================================
  *
- * ShapeItem represents actual individual shapes.
+ * composite.ShapeItem represents actual individual shapes.
  *
  * Examples:
  * - Circle

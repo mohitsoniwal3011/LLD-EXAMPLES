@@ -1,4 +1,4 @@
-
+package solid;
 
 // any class should be open for extension and closed for modification
 

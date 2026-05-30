@@ -1,4 +1,4 @@
-/*
+package builder;/*
  * ============================================================
  *                  BUILDER PATTERN
  * ============================================================
@@ -15,7 +15,7 @@
  * ------------------
  * Imagine creating objects like this:
  *
- * new Response(200, "Success", "Payload", true, false, ...);
+ * new builder.Response(200, "Success", "Payload", true, false, ...);
  *
  * Problems:
  * - Constructor becomes huge and unreadable
@@ -26,7 +26,7 @@
  *
  * Builder Pattern solves this by allowing:
  *
- * new Response.ResponseBuilder()
+ * new builder.Response.ResponseBuilder()
  *      .setStatus(200)
  *      .setMsg("Success")
  *      .setPayload("Data")
@@ -134,7 +134,7 @@ class Response {
          * Final object creation method.
          *
          * This officially creates and returns
-         * the immutable Response object.
+         * the immutable builder.Response object.
          */
         public Response build() {
 
@@ -162,7 +162,7 @@ class Response {
     @Override
     public String toString() {
 
-        return "Response{"
+        return "builder.Response{"
                 + "status=" + status
                 + ", msg='" + msg + '\''
                 + ", payload='" + payload + '\''
@@ -191,7 +191,7 @@ public class ResponseBuilderPattern {
 
                 .setStatus(200)
                 .setMsg("Success")
-                .setPayload("User Data")
+                .setPayload("builder.User Data")
 
                 .build();
 

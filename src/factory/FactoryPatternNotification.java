@@ -1,11 +1,11 @@
-
+package factory;
 
 /*
 Factory Pattern provides a way to create objects without exposing the object creation logic to the client.
  */
 
 /*
- * Notification interface
+ * factory.Notification interface
  *
  * This acts as the common contract for all notification types.
  * Any new notification type must implement this interface.
@@ -28,7 +28,7 @@ class EmailNotifications implements Notification {
 
     @Override
     public void send(String msg) {
-        System.out.println("Sending Email Notification : " + msg);
+        System.out.println("Sending Email factory.Notification : " + msg);
     }
 }
 
@@ -40,7 +40,7 @@ class OTPNotifications implements Notification {
 
     @Override
     public void send(String msg) {
-        System.out.println("Sending OTP Notification : " + msg);
+        System.out.println("Sending OTP factory.Notification : " + msg);
     }
 }
 
@@ -52,7 +52,7 @@ class SMSNotifications implements Notification {
 
     @Override
     public void send(String msg) {
-        System.out.println("Sending SMS Notification : " + msg);
+        System.out.println("Sending SMS factory.Notification : " + msg);
     }
 }
 
@@ -76,18 +76,18 @@ class SMSNotifications implements Notification {
 
 // class FactoryPatternNotificationBadCode {
 //
-//     private Notification getNotification(String type) {
+//     private factory.Notification getNotification(String type) {
 //
 //         if ("sms".equals(type)) {
-//             return new SMSNotifications();
+//             return new factory.SMSNotifications();
 //         }
 //
 //         if ("otp".equals(type)) {
-//             return new OTPNotifications();
+//             return new factory.OTPNotifications();
 //         }
 //
 //         if ("email".equals(type)) {
-//             return new EmailNotifications();
+//             return new factory.EmailNotifications();
 //         }
 //
 //         return null;
@@ -112,7 +112,7 @@ class NotificationFactory {
     /*
      * Factory Method
      *
-     * Returns the appropriate Notification object
+     * Returns the appropriate factory.Notification object
      * based on the provided type.
      */
     public static Notification getInstance(String type) {

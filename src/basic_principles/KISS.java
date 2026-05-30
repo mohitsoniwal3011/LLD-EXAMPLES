@@ -1,3 +1,5 @@
+package basic_principles;
+
 public class KISS {   // Keep It Simple And Stupid
 
     public boolean isEvenUnnecessaryComplex(int n ){

@@ -1,4 +1,4 @@
-/*
+package abstract_factory;/*
  * ============================================================
  *              ABSTRACT FACTORY PATTERN
  * ============================================================
@@ -75,7 +75,7 @@
  * -> Creates FAMILIES of related objects
  *
  * Example:
- * UIFactory ->
+ * abstract_factory.UIFactory ->
  *      Button + Checkbox + TextField
  *
  * ============================================================

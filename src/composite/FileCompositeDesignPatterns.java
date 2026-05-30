@@ -1,3 +1,5 @@
+package composite;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ import java.util.List;
  * PROBLEM WITHOUT COMPOSITE PATTERN
  * =========================================================================
  *
- * Imagine a File System containing:
+ * Imagine a composite.File System containing:
  * 1. Files
  * 2. Folders
  *
@@ -52,22 +54,22 @@ import java.util.List;
  * Instead of checking object types manually,
  * we create a common interface:
  *
- *                      FileSystem
+ *                      composite.FileSystem
  *                     /          \
  *                    /            \
- *                 File          Folder
+ *                 composite.File          composite.Folder
  *                                   \
  *                                    \
- *                              contains FileSystem
+ *                              contains composite.FileSystem
  *
  *
  * IMPORTANT IDEA:
  * -------------------------------------------------------------------------
- * Folder stores List<FileSystem>.
+ * composite.Folder stores List<composite.FileSystem>.
  *
  * This means:
- * 1. Folder can contain files
- * 2. Folder can contain other folders
+ * 1. composite.Folder can contain files
+ * 2. composite.Folder can contain other folders
  *
  * This creates recursive tree hierarchy.
  *
@@ -76,9 +78,9 @@ import java.util.List;
  * REAL WORLD EXAMPLES OF COMPOSITE
  * =========================================================================
  *
- * 1. File System
- *    - File
- *    - Folder
+ * 1. composite.File System
+ *    - composite.File
+ *    - composite.Folder
  *
  * 2. Restaurant Menu
  *    - Menu Item
@@ -99,18 +101,18 @@ import java.util.List;
  *
  * Problem Statement:
  * -------------------------------------------------------------------------
- * Design a File System where:
+ * Design a composite.File System where:
  *
- * 1. File supports:
+ * 1. composite.File supports:
  *      - show()
  *      - getName()
  *
- * 2. Folder supports:
+ * 2. composite.Folder supports:
  *      - show()
  *      - getName()
  *      - add()
  *
- * 3. Folder can contain:
+ * 3. composite.Folder can contain:
  *      - Files
  *      - Other folders
  *
@@ -137,14 +139,14 @@ import java.util.List;
  * HOW THIS IMPLEMENTATION WORKS
  * =========================================================================
  *
- * FileSystem (Component)
+ * composite.FileSystem (Component)
  * -------------------------------------------------------------------------
  * Common interface implemented by:
- *    - File (Leaf)
- *    - Folder (Composite)
+ *    - composite.File (Leaf)
+ *    - composite.Folder (Composite)
  *
  *
- * File (Leaf)
+ * composite.File (Leaf)
  * -------------------------------------------------------------------------
  * Represents actual individual files.
  *
@@ -155,11 +157,11 @@ import java.util.List;
  * These are terminal/end objects.
  *
  *
- * Folder (Composite)
+ * composite.Folder (Composite)
  * -------------------------------------------------------------------------
  * Represents folder/container.
  *
- * Folder can contain:
+ * composite.Folder can contain:
  *    - Files
  *    - Other folders
  *
@@ -174,12 +176,12 @@ import java.util.List;
  *
  *      file.show();
  *
- * Since every object implements FileSystem:
+ * Since every object implements composite.FileSystem:
  *
- * 1. If object is File:
+ * 1. If object is composite.File:
  *      -> Displays file details.
  *
- * 2. If object is Folder:
+ * 2. If object is composite.Folder:
  *      -> Recursively displays all child files/folders.
  *
  *
@@ -236,8 +238,8 @@ import java.util.List;
  * =========================================================================
  *
  * Common interface for:
- * 1. File
- * 2. Folder
+ * 1. composite.File
+ * 2. composite.Folder
  *
  * =========================================================================
  */
@@ -261,7 +263,7 @@ interface FileSystem {
  * LEAF CLASS
  * =========================================================================
  *
- * File represents actual individual files.
+ * composite.File represents actual individual files.
  *
  * Examples:
  * - Mohit.txt
@@ -292,7 +294,7 @@ class File implements FileSystem {
      */
     @Override
     public void show() {
-        System.out.println("File Name : " + this.name);
+        System.out.println("composite.File Name : " + this.name);
     }
 
     /**
@@ -311,9 +313,9 @@ class File implements FileSystem {
  * COMPOSITE CLASS
  * =========================================================================
  *
- * Folder represents folder/container.
+ * composite.Folder represents folder/container.
  *
- * Folder can contain:
+ * composite.Folder can contain:
  * 1. Files
  * 2. Other folders
  *
@@ -366,7 +368,7 @@ class Folder implements FileSystem {
     @Override
     public void show() {
 
-        System.out.println("Folder Name: " + this.name);
+        System.out.println("composite.Folder Name: " + this.name);
 
         for (FileSystem file : files) {
             file.show();
@@ -389,7 +391,7 @@ class Folder implements FileSystem {
  * DRIVER CLASS
  * =========================================================================
  *
- * Creates File System hierarchy and demonstrates recursive traversal
+ * Creates composite.File System hierarchy and demonstrates recursive traversal
  * using Composite Pattern.
  *
  * =========================================================================

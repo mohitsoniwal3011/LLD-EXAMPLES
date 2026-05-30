@@ -1,4 +1,4 @@
-/*
+package strategy;/*
  * ============================================================
  *                  STRATEGY PATTERN
  * ============================================================
@@ -20,7 +20,7 @@
  *
  * Example:
  * --------
- * Payment System:
+ * strategy.Payment System:
  *
  * Different payment methods:
  * - UPI
@@ -55,7 +55,7 @@
  *
  * Real-world Examples:
  * --------------------
- * - Payment systems
+ * - strategy.Payment systems
  * - Sorting algorithms
  * - Compression algorithms
  * - Route finding systems
@@ -99,7 +99,7 @@ interface Payment {
 
 
 /*
- * UPI Payment Strategy
+ * UPI strategy.Payment Strategy
  */
 class UPIPayment implements Payment {
 
@@ -114,7 +114,7 @@ class UPIPayment implements Payment {
 
 
 /*
- * Wallet Payment Strategy
+ * Wallet strategy.Payment Strategy
  */
 class WalletPayment implements Payment {
 
@@ -129,7 +129,7 @@ class WalletPayment implements Payment {
 
 
 /*
- * Card Payment Strategy
+ * Card strategy.Payment Strategy
  */
 class CardPayment implements Payment {
 

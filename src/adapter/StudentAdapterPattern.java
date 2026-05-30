@@ -1,4 +1,4 @@
-/*
+package adapter;/*
  * ============================================================
  *                  ADAPTER PATTERN
  * ============================================================
@@ -17,12 +17,12 @@
  * Example:
  *
  * Our application expects:
- *      Student interface
+ *      adapter.Student interface
  *
  * But an external/legacy system provides:
- *      SchoolStudent class
+ *      adapter.SchoolStudent class
  *
- * Since SchoolStudent does not implement Student,
+ * Since adapter.SchoolStudent does not implement adapter.Student,
  * we cannot use it directly.
  *
  *
@@ -54,8 +54,8 @@
  * - Third-party API integration
  * - Legacy system integration
  * - DTO conversion
- * - Payment gateway integration
- * - Response normalization between microservices
+ * - strategy.Payment gateway integration
+ * - builder.Response normalization between microservices
  *
  *
  * IMPORTANT INTERVIEW LINE:
@@ -102,7 +102,7 @@ interface Student {
  *
  * Problem:
  * --------
- * This class does NOT implement Student interface.
+ * This class does NOT implement adapter.Student interface.
  *
  * Therefore it is incompatible with our system.
  */
@@ -150,10 +150,10 @@ class SchoolStudent {
  *                  ADAPTER CLASS
  * ============================================================
  *
- * Adapter converts SchoolStudent
- * into Student-compatible structure.
+ * Adapter converts adapter.SchoolStudent
+ * into adapter.Student-compatible structure.
  *
- * This allows SchoolStudent objects
+ * This allows adapter.SchoolStudent objects
  * to work with our system.
  */
 class SchoolStudentAdapter implements Student {
@@ -176,8 +176,8 @@ class SchoolStudentAdapter implements Student {
 
 
     /*
-     * Converting SchoolStudent data
-     * into Student-compatible format.
+     * Converting adapter.SchoolStudent data
+     * into adapter.Student-compatible format.
      */
     @Override
     public String getName() {
@@ -202,7 +202,7 @@ class SchoolStudentAdapter implements Student {
  *              NORMAL COMPATIBLE CLASS
  * ============================================================
  *
- * This class already implements Student interface.
+ * This class already implements adapter.Student interface.
  *
  * Therefore it works directly with the system.
  */
@@ -244,10 +244,10 @@ class CollegeStudent implements Student {
  * ============================================================
  *
  * This service expects all objects
- * to behave like Student interface.
+ * to behave like adapter.Student interface.
  *
  * Thanks to Adapter Pattern,
- * both CollegeStudent and SchoolStudent
+ * both adapter.CollegeStudent and adapter.SchoolStudent
  * can now work together.
  */
 class StudentService {
@@ -343,7 +343,7 @@ public class StudentAdapterPattern {
 
         /*
          * Both compatible and adapted objects
-         * are treated uniformly as Student.
+         * are treated uniformly as adapter.Student.
          */
         List<Student> students =
                 service.getAllStudents();

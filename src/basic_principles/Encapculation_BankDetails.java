@@ -1,3 +1,4 @@
+package basic_principles;
 
 public class Encapculation_BankDetails {
     private long balance;

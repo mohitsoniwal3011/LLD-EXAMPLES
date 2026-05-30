@@ -1,3 +1,5 @@
+package decorator;
+
 /**
  * Decorator Pattern
  * -----------------
@@ -8,9 +10,9 @@
  * Problem:
  * --------
  * Suppose we have multiple bike models:
- * - CB350RS
- * - CB350 Highness
- * - CB350
+ * - decorator.CB350RS
+ * - decorator.CB350 Highness
+ * - decorator.CB350
  *
  * And multiple optional accessories:
  * - Fog Lights
@@ -35,21 +37,21 @@
  * Solution:
  * ---------
  * Decorators wrap an existing bike object and add extra behavior while still
- * exposing the same interface (BasicBike).
+ * exposing the same interface (decorator.BasicBike).
  *
  * Example:
  *
- * BasicBike bike =
- *     new CustomExhaustDecorator(
- *         new FogLightDecorator(
- *             new CB350RS()
+ * decorator.BasicBike bike =
+ *     new decorator.CustomExhaustDecorator(
+ *         new decorator.FogLightDecorator(
+ *             new decorator.CB350RS()
  *         )
  *     );
  *
  * Here:
- * - CB350RS is the base component.
- * - FogLightDecorator adds fog light related behavior.
- * - CustomExhaustDecorator adds custom exhaust related behavior.
+ * - decorator.CB350RS is the base component.
+ * - decorator.FogLightDecorator adds fog light related behavior.
+ * - decorator.CustomExhaustDecorator adds custom exhaust related behavior.
  *
  * Benefits:
  * ---------
@@ -62,9 +64,9 @@
  *
  * How this implementation follows the pattern:
  * --------------------------------------------
- * - BasicBike defines the common abstraction.
- * - CB350RS, CB350Highness, and CB350 are concrete components.
- * - Decorators extend BasicBike and also contain a BasicBike reference.
+ * - decorator.BasicBike defines the common abstraction.
+ * - decorator.CB350RS, decorator.CB350Highness, and decorator.CB350 are concrete components.
+ * - Decorators extend decorator.BasicBike and also contain a decorator.BasicBike reference.
  * - Each decorator delegates to the wrapped bike and adds its own behavior.
  *
  * This allows multiple decorators to be stacked together dynamically.

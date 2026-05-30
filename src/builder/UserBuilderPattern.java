@@ -1,4 +1,4 @@
-/*
+package builder;/*
  * ============================================================
  *                  BUILDER PATTERN
  * ============================================================
@@ -16,7 +16,7 @@
  * Example of problematic constructor:
  * -----------------------------------
  *
- * new User("Mohit", 24, "Delhi", "India");
+ * new builder.User("Mohit", 24, "Delhi", "India");
  *
  * Problems:
  * - Hard to remember parameter order
@@ -28,7 +28,7 @@
  * Builder Pattern solves this problem:
  * ------------------------------------
  *
- * new User.UserBuilder()
+ * new builder.User.UserBuilder()
  *      .setName("Mohit")
  *      .setAge(24)
  *      .setCity("Delhi")
@@ -82,7 +82,7 @@ class User {
      * Private constructor
      *
      * Object creation is restricted.
-     * Only Builder can create User object.
+     * Only Builder can create builder.User object.
      */
     private User(UserBuilder builder) {
 
@@ -97,7 +97,7 @@ class User {
      * Static Nested Builder Class
      *
      * Responsible for collecting values
-     * and constructing final User object.
+     * and constructing final builder.User object.
      */
     static class UserBuilder {
 
@@ -144,7 +144,7 @@ class User {
         /*
          * Final object creation method.
          *
-         * Creates immutable User object
+         * Creates immutable builder.User object
          * using collected builder values.
          */
         public User build() {
@@ -174,7 +174,7 @@ class User {
     @Override
     public String toString() {
 
-        return "User{"
+        return "builder.User{"
                 + "name='" + name + '\''
                 + ", age=" + age
                 + ", city='" + city + '\''

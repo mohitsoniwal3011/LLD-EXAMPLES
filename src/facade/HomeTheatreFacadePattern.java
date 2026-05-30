@@ -1,3 +1,5 @@
+package facade;
+
 /**
  * Facade Pattern
  * --------------
@@ -11,10 +13,10 @@
  * Without a Facade, the client would need to know about and interact with
  * multiple subsystem classes directly:
  *
- * Projector projector = new Projector();
- * SoundSystem soundSystem = new SoundSystem();
- * StreamingDevice streamingDevice = new StreamingDevice();
- * Lights lights = new Lights();
+ * facade.Projector projector = new facade.Projector();
+ * facade.SoundSystem soundSystem = new facade.SoundSystem();
+ * facade.StreamingDevice streamingDevice = new facade.StreamingDevice();
+ * facade.Lights lights = new facade.Lights();
  *
  * projector.on();
  * lights.dim();
@@ -53,7 +55,7 @@
  *
  * How this implementation follows the pattern:
  * --------------------------------------------
- * - Projector, SoundSystem, Lights, and StreamingDevice are subsystem classes.
+ * - facade.Projector, facade.SoundSystem, facade.Lights, and facade.StreamingDevice are subsystem classes.
  * - HomeTheatreFacade acts as the Facade.
  * - The Facade coordinates the subsystem interactions.
  * - The client invokes a single method (watchMovie()) instead of managing
@@ -67,10 +69,10 @@
  * Example:
  *
  * public HomeTheatreFacade(
- *         Projector projector,
- *         SoundSystem soundSystem,
- *         StreamingDevice streamingDevice,
- *         Lights lights) {
+ *         facade.Projector projector,
+ *         facade.SoundSystem soundSystem,
+ *         facade.StreamingDevice streamingDevice,
+ *         facade.Lights lights) {
  *     ...
  * }
  *

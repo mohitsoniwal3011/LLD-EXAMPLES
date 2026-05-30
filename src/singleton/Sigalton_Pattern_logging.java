@@ -1,3 +1,5 @@
+package singleton;
+
 public class Sigalton_Pattern_logging {
 
     // Static variable to hold the single instance of the class

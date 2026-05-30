@@ -1,4 +1,4 @@
-
+package decorator;
 
 abstract class BasicPizza{
     public abstract int cost();

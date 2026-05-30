@@ -1,4 +1,4 @@
-/*
+package adapter;/*
  * ============================================================
  *                  ADAPTER PATTERN
  * ============================================================
@@ -28,9 +28,9 @@
  *
  * But different payment gateways provide:
  *
- * RazorPay  -> makePayment()
- * PhonePay  -> executePayment()
- * GooglePay -> transferMoney()
+ * adapter.RazorPay  -> makePayment()
+ * adapter.PhonePay  -> executePayment()
+ * adapter.GooglePay -> transferMoney()
  *
  * Since method names and interfaces differ,
  * they are incompatible with our system.
@@ -53,7 +53,7 @@
  *
  * Real-world Usage:
  * -----------------
- * - Payment gateway integrations
+ * - strategy.Payment gateway integrations
  * - Third-party APIs
  * - Legacy system integration
  * - DTO transformations
@@ -87,42 +87,42 @@
 
 
 /*
- * RazorPay external SDK
+ * adapter.RazorPay external SDK
  */
 class RazorPay {
 
     public void makePayment() {
 
         System.out.println(
-                "Paying via RazorPay"
+                "Paying via adapter.RazorPay"
         );
     }
 }
 
 
 /*
- * PhonePay external SDK
+ * adapter.PhonePay external SDK
  */
 class PhonePay {
 
     public void executePayment() {
 
         System.out.println(
-                "Paying via PhonePay"
+                "Paying via adapter.PhonePay"
         );
     }
 }
 
 
 /*
- * GooglePay external SDK
+ * adapter.GooglePay external SDK
  */
 class GooglePay {
 
     public void transferMoney() {
 
         System.out.println(
-                "Paying via GooglePay"
+                "Paying via adapter.GooglePay"
         );
     }
 }
@@ -157,7 +157,7 @@ interface PaymentAdapter {
 
 
 /*
- * Adapter for RazorPay
+ * Adapter for adapter.RazorPay
  */
 class RazorPayAdapter
         implements PaymentAdapter {
@@ -191,7 +191,7 @@ class RazorPayAdapter
 
 
 /*
- * Adapter for PhonePay
+ * Adapter for adapter.PhonePay
  */
 class PhonePayAdapter
         implements PaymentAdapter {
@@ -219,7 +219,7 @@ class PhonePayAdapter
 
 
 /*
- * Adapter for GooglePay
+ * Adapter for adapter.GooglePay
  */
 class GooglePayAdapter
         implements PaymentAdapter {
@@ -251,7 +251,7 @@ class GooglePayAdapter
  *                  CLIENT/SERVICE CLASS
  * ============================================================
  *
- * This class works ONLY with PaymentAdapter.
+ * This class works ONLY with adapter.PaymentAdapter.
  *
  * It does NOT care:
  * - Which payment gateway is used
