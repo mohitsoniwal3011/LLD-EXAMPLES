@@ -68,7 +68,7 @@
  * -> Creates ONE type of object
  *
  * Example:
- * NotificationFactory -> SMS / Email
+ * factory.NotificationFactory -> SMS / Email
  *
  *
  * Abstract Factory Pattern:

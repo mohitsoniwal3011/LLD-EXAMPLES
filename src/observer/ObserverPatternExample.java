@@ -22,7 +22,7 @@
  *
  * Example:
  * --------
- * YouTube Notification System:
+ * YouTube factory.Notification System:
  *
  * - YouTuber uploads a video
  * - All subscribers receive notification

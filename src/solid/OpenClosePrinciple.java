@@ -10,7 +10,7 @@ class EmailNotification implements Notifications{
 
     @Override
     public void send() {
-        System.out.println("Sending Email Notification");
+        System.out.println("Sending Email factory.Notification");
     }
 }
 
@@ -18,7 +18,7 @@ class OTPNotification implements Notifications{
 
     @Override
     public void send() {
-        System.out.println("Sending OTP Notification");
+        System.out.println("Sending OTP factory.Notification");
     }
 }
 
@@ -27,7 +27,7 @@ class SMSNotification implements Notifications{
 
     @Override
     public void send() {
-        System.out.println("Sending SMS Notification");
+        System.out.println("Sending SMS factory.Notification");
     }
 }
 
